@@ -1,6 +1,6 @@
 const html = __dirname + '/public';
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 const apiUrl = '/api';
 
 // Express
