@@ -1,0 +1,25 @@
+{
+  "name": "manavikata",
+  "version": "1.0.0",
+  "description": "NGO",
+  "main": "server.js",
+  "scripts": {
+    "serve": "npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Riturajcse/Manavikata.git"
+  },
+  "author": "Rituraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Riturajcse/Manavikata/issues"
+  },
+  "homepage": "https://github.com/Riturajcse/Manavikata#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
+    "express": "^4.16.4"
+  }
+}
