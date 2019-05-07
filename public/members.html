@@ -70,269 +70,113 @@
 		 </div>
 	 </header>
 	 
-        <!--================Header Menu Area =================-->
-        
-        <!--================Home Banner Area =================-->
-        <!-- <section class="banner_area">
-            <div class="banner_inner d-flex align-items-center">
-            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-				<div class="container">
-					<div class="banner_content text-center">
-						<h2>About Us</h2>
-						<div class="page_link">
-							<a href="#">Home</a>
-							<a href="about-us.html">About Us</a>
-						</div>
+			 
+		<br><br><br><br><br><br><br><br>
+	 <style>
+	.our-team{
+		 text-align: center;
+		 border-radius: 10px;
+		 overflow: hidden;
+		 position: relative;
+		 transition: all 0.3s ease 0s;
+	 }
+	 .our-team .pic{
+		 background: #f6931e;
+		 transition: all 0.3s ease 0s;
+	 }
+	
+	 .our-team .pic img{
+		 width: 40%;
+		 height: auto;
+	 }
+	 .our-team .team-content{
+		 width: 100%;
+		 padding: 7px 15px;
+		 background: #f6931e;
+		 position: absolute;
+		 bottom: -30%;
+		 right: 0;
+		 opacity: 0;
+		 transition: all 0.3s ease 0s;
+	 }
+	 .our-team:hover .team-content{
+		 opacity: 1;
+		 bottom: -10px;
+	 }
+	 .our-team .title{
+		 font-size: 22px;
+		 color: #fff;
+		 text-transform: uppercase;
+		 letter-spacing: 1px;
+		 margin: 0 0 5px 0;
+	 }
+	 .our-team .post{
+		 display: block;
+		 font-size: 15px;
+		 font-weight: 600;
+		 color: #fff;
+		 font-style: italic;
+		 text-transform: capitalize;
+		 margin: 0 0 5px 0;
+	 }
+	 
+	 
+	</style>
+	 <div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<div class="our-team">
+					<div class="pic">
+						<img src="img/sudip.jfif">
 					</div>
-				</div>
-            </div>
-        </section> -->
-        <!--================End Home Banner Area =================-->
-		<div  position: fixed;> 
-		<style>
-			.our-team{
-    text-align: center;
-    margin-bottom: 100px;
-    z-index: 1;
-    position: relative;
-}
-.our-team .pic{
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-}
-.our-team .pic:after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.7);
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.5s ease 0s;
-}
-.our-team:hover .pic:after{ opacity: 1; }
-.our-team .pic img{
-    width: 60%;
-    height: auto;
-}
-.our-team .social{
-    width: 70%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    opacity: 0;
-    position: absolute;
-    top: 45%;
-    left: 0;
-    z-index: 1;
-    transition: all 0.5s ease 0s;
-}
-.our-team:hover .social{ opacity: 1; }
-.our-team .social li{ display: inline-block; }
-.our-team .social li a{
-    display: block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    font-size: 15px;
-    color: #fff;
-    margin-right: 10px;
-    transition: all 0.5s ease 0s;
-}
-.our-team .social li a:hover{
-    background: #fff;
-    color: #000;
-}
-.our-team .team-content{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px dotted #ddd;
-    position: absolute;
-    bottom: -70px;
-    left: 0;
-    z-index: -1;
-    transition: all 0.5s ease 0s;
-}
-.our-team:hover .team-content{ border: 2px dotted #00adae; }
-.our-team .team-info{
-    width: 70%;
-    color: #464646;
-    position: absolute;
-    bottom: 12px;
-    left: 0;
-}
-.our-team .title{
-    font-size: 20px;
-    font-weight: 600;
-    color: #464646;
-    margin: 0 0 5px 0;
-    transition: all 0.5s ease 0s;
-}
-.our-team:hover .title{ color: #00adae; }
-.our-team .post{
-    display: block;
-    font-size: 14px;
-    color: #464646;
-}
-			</style>
-			
-			<body>
-			
-			<table>
-			
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-sm-6">
-							<div class="our-team">
-								<div class="pic">
-									<img src="img/sudip.jfif">
-									<ul class="social">
-										<li><a href="#" class="fab fa-facebook"></a></li>
-										<li><a href="#" class="fab fa-twitter"></a></li>
-										<li><a href="#" class="fab fa-google-plus"></a></li>
-										<li><a href="#" class="fab fa-linkedin"></a></li>
-									</ul>
-								</div>
-								<div class="team-content">
-									<div class="team-info">
-										<h3 class="title">Sudip Sarkar</h3>
-										<span class="post">President</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<div class="our-team">
-								<div class="pic">
-									<img src="img/arka.jfif">
-									<ul class="social">
-										<li><a href="#" class="fab fa-facebook"></a></li>
-										<li><a href="#" class="fab fa-twitter"></a></li>
-										<li><a href="#" class="fab fa-google-plus"></a></li>
-										<li><a href="#" class="fab fa-linkedin"></a></li>
-									</ul>
-								</div>
-								<div class="team-content">
-									<div class="team-info">
-										<h3 class="title">Arka Kar</h3>
-										<span class="post">Vice President</span>
-									</div>
-								</div>
-							</div>
-						</div>
-				 
-						<div class="col-md-3 col-sm-6">
-							<div class="our-team">
-								<div class="pic">
-									<img src="img/sandip.jfif">
-									<ul class="social">
-										<li><a href="#" class="fab fa-facebook"></a></li>
-										<li><a href="#" class="fab fa-twitter"></a></li>
-										<li><a href="#" class="fab fa-google-plus"></a></li>
-										<li><a href="#" class="fab fa-linkedin"></a></li>
-									</ul>
-								</div>
-								<div class="team-content">
-									<div class="team-info">
-										<h3 class="title">Sandeep Roy</h3>
-										<span class="post">General Secratory</span>
-									</div>
-								</div>
-							</div>
-						</div>
-				 
-						<div class="col-md-3 col-sm-6">
-							<div class="our-team">
-								<div class="pic">
-									<img src="img/papiya.jfif">
-									<ul class="social">
-										<li><a href="#" class="fab fa-facebook"></a></li>
-										<li><a href="#" class="fab fa-twitter"></a></li>
-										<li><a href="#" class="fab fa-google-plus"></a></li>
-										<li><a href="#" class="fab fa-linkedin"></a></li>
-									</ul>
-								</div>
-								<div class="team-content">
-									<div class="team-info">
-										<h3 class="title">Dr. Papiya Sarma</h3>
-										<span class="post">Assistant Secratory</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<div class="our-team">
-								<div class="pic">
-									<img src="img/Shankha Shubhra Chanda.jfif">
-									<ul class="social">
-										<li><a href="#" class="fab fa-facebook"></a></li>
-										<li><a href="#" class="fab fa-twitter"></a></li>
-										<li><a href="#" class="fab fa-google-plus"></a></li>
-										<li><a href="#" class="fab fa-linkedin"></a></li>
-									</ul>
-								</div>
-								<div class="team-content">
-									<div class="team-info">
-										<h4 class="title">Shankha S.Chanda</h4>
-										<span class="post">Tresurer</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<div class="our-team">
-								<div class="pic">
-									<img src="img/Atanu Paul.jfif">
-									<ul class="social">
-										<li><a href="#" class="fab fa-facebook"></a></li>
-										<li><a href="#" class="fab fa-twitter"></a></li>
-										<li><a href="#" class="fab fa-google-plus"></a></li>
-										<li><a href="#" class="fab fa-linkedin"></a></li>
-									</ul>
-								</div>
-								<div class="team-content">
-									<div class="team-info">
-										<h3 class="title">Atanu Paul</h3>
-										<span class="post">Excecutive Member</span>
-									</div>
-								</div>
-							</div>
-						</div>
-				 
-						<div class="col-md-3 col-sm-6">
-							<div class="our-team">
-								<div class="pic">
-									<img src="img/Dip Chakraborty.jfif">
-									<ul class="social">
-										<li><a href="#" class="fab fa-facebook"></a></li>
-										<li><a href="#" class="fab fa-twitter"></a></li>
-										<li><a href="#" class="fab fa-google-plus"></a></li>
-										<li><a href="#" class="fab fa-linkedin"></a></li>
-									</ul>
-								</div>
-								<div class="team-content">
-									<div class="team-info">
-										<h3 class="title">Dip Chakraborty</h3>
-										<span class="post">Excecutive Member</span>
-									</div>
-								</div>
-							</div>
-						</div>
-				 
-						
-							</div>
-						</div>
+					<div class="team-content">
+						<h3 class="title">Sudip Sarkar</h3>
+						<span class="post">President</span>
 						
 					</div>
 				</div>
-			</table>
-        <!--================ start footer Area  =================-->	
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="our-team">
+					<div class="pic">
+						<img src="img/arka.jfif">
+					</div>
+					<div class="team-content">
+						<h3 class="title">Arka Kar</h3>
+						<span class="post">Vice President</span>
+					
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="our-team">
+					<div class="pic">
+						<img src="img/sandip.jfif">
+					</div>
+					<div class="team-content">
+						<h3 class="title">Sandeep Roy</h3>
+						<span class="post">General Secratory</span>
+					
+					</div>
+				</div>
+			
+			<div class="col-md-4 col-sm-6">
+				<div class="our-team">
+					<div class="pic">
+						<img src="img/papiya.jfif">
+					</div>
+					<div class="team-content">
+						<h3 class="title">Dr. Papiya Sarma</h3>
+						<span class="post">Assistant Secratory</span>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><br><br><br>
+		
+      	
         <footer class="footer-area section_gap">
 			<div class="container">
 				<div class="row">
@@ -353,9 +197,8 @@
 						<div class="col-lg-3  col-md-6 col-sm-6">
 								<div class="single-footer-widget">
 									<h6 class="footer_title">Office  Address</h6>
-									<p>A.D. Nagar Road, Beltali,<br>
-										Opposite of Ration Shop, <br> 
-										 Agartala Tripura West PIN-799003 
+									<p>A.D. Nagar, Beltali,<br> 
+										 Agartala Tripura West, PIN-799003 
 									</p>	
 								</div>
 							</div>
