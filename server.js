@@ -12,7 +12,14 @@ var routes = require('./server/routes/routes.js');
 var db = require('./server/config/db');
 
 //db connection
-mongoose.connect(db.mongo.uri, {});
+//mongoose.connect(db.mongo.uri, {});
+
+mongoose.connect(db.mongo.uri, {}, function(err) {
+    if (err) {throw err;}
+    else {
+      console.log('Db Connection successful!');
+    }
+});
 
 var app = express();
 
