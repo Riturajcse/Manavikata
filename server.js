@@ -1,4 +1,4 @@
-const html = __dirname + '/public';
+const html = __dirname + '/client';
 
 const port = process.env.PORT || 4000;
 const apiUrl = '/api';
@@ -7,6 +7,13 @@ const apiUrl = '/api';
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const express = require('express');
+var mongoose = require('mongoose');
+var routes = require('./server/routes/routes.js');
+var db = require('./server/config/db');
+
+//db connection
+mongoose.connect(db.mongo.uri, {});
+
 var app = express();
 
 app
@@ -14,8 +21,27 @@ app
     .use(bodyParser.json())
     // Static content
     .use(express.static(html))
+    .use('/api', routes)
     // Start server
     .listen(port, function () {
-        console.log('Port: ' + port);
-        console.log('Html: ' + html);
+        console.log('Server running on port: ' + port);
+    });
+
+    var allowCrossDomain = function(req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    
+        // intercept OPTIONS method
+        if ('OPTIONS' == req.method) {
+          res.send(200);
+        }
+        else {
+          next();
+        }
+    };
+    app.use(allowCrossDomain);
+
+    app.get('/api/', function(req, res) {
+        res.send('Hello World');
     });
