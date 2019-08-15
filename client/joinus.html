@@ -219,6 +219,7 @@
 		<script>
 				var app = angular.module('myApp', []);
 				app.controller('myCtrl', function($scope, $http) {
+					    var apiUrl = 'http://manavikata.org/api/members';
 						$scope.submitting = false;
 						$scope.loaded = true;
 						$scope.successfullySubmitted = false;
@@ -240,7 +241,7 @@
 								"dob": $scope.form.dob.toString(),
 								"fatherName": $scope.form.fatherName
 							}
-							$http.post('http://localhost:4000/api/members', postData).then(function(response){
+							$http.post(apiUrl, postData).then(function(response){
 								$scope.submitting = false;
 								if (response.status) {
 									$scope.successfullySubmitted = true;

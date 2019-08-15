@@ -218,6 +218,7 @@
 				<script>
 						var app = angular.module('myApp', []);
 						app.controller('myCtrl', function($scope, $http) {
+								var apiUrl = 'http://manavikata.org/api/bdMembers';
 								$scope.submitting = false;
 								$scope.loaded = true;
 								$scope.successfullySubmitted = false;
@@ -234,7 +235,7 @@
 									"address": $scope.form.address,
 									"bloodGroup": $scope.form.bloodGroup
 								}
-								$http.post('http://localhost:4000/api/bdMembers', postData).then(function(response){
+								$http.post(apiUrl, postData).then(function(response){
 									$scope.submitting = false;
 									if (response.status) {
 										$scope.successfullySubmitted = true;
