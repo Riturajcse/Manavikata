@@ -12,12 +12,12 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
-    </head>
+				<link rel="stylesheet" href="css/responsive.css">
+		</head>
+		<script src="js/angular.min.js"></script>
     <body>
         
         <!--================Header Menu Area =================-->
@@ -87,42 +87,52 @@
             </div>
         </section> -->
 		<!--================End Home Banner Area =================-->
-		<div class="form-container" style="max-width: 80%; margin-left: 15%; color: black;">
-		<h3 style="margin-top: 15vh;">Enter your details below to register for Blood Donations</h3>
-		<form style="color: black" >
-				<div class="form-group">
-					<label for="exampleFormControlInput1">Name</label>
-					<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rahul Banerjee">
-				</div>
-				<div class="form-group">
-					<label for="exampleFormControlInput1">Contact no.</label>
-					<input type="email" class="form-control" id="exampleFormControlInput2" placeholder="+9198789876543">
-				</div>
-				<div class="form-group">
-				  <label for="exampleFormControlInput1">Email address</label>
-				  <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com">
-				</div>
-				<div class="form-group">
-				  <label style="margin-left: 5px;margin-top: 10px;">is your blood group</label>
-				  <select class="form-control">
-					<option>A(+)</option>
-					<option>A(-)</option>
-					<option>B(+)</option>
-					<option>B(-)</option>
-					<option>AB(+)</option>
-					<option>AB(-)</option>
-					<option>O(+)</option>
-					<option>O(-)</option>
-				  </select>
-				</div>
-				<div class="form-group">
-				  <label for="exampleFormControlTextarea1">Address</label>
-				  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="A.D. Nagar Road, Beltali, Opposite of Ration Shop, Agartala Tripura West PIN-799003"></textarea>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary mb-2">Submit</button>
-				</div>
-			  </form>
+		<div class="form-container" style="max-width: 80%; margin-left: 15%; color: black; height: 60vh;" ng-app="myApp" ng-controller="myCtrl">
+			<div ng-if="!successfullySubmitted">
+					<h3 style="margin-top: 15vh;">Enter your details below to register for Blood Donations</h3>
+					<form style="color: black" ng-if="loaded">
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Name</label>
+								<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rahul Banerjee" ng-model="form.name">
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Contact no.</label>
+								<input type="text" class="form-control" id="exampleFormControlInput2" placeholder="+9198789876543" ng-model="form.contactNumber">
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Email address</label>
+								<input type="text" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com" ng-model="form.email">
+							</div>
+							<div class="form-group">
+								<label style="margin-left: 5px;margin-top: 10px;">Blood Group</label>
+								<select ng-model="form.bloodGroup">
+									<option value="A+">A(+)</option>
+									<option value="A-">A(-)</option>
+									<option value="B+">B(+)</option>
+									<option value="B-">B(-)</option>
+									<option value="AB+">AB(+)</option>
+									<option value="AB-">AB(-)</option>
+									<option value="O+">O(+)</option>
+									<option value="O-">O(-)</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlTextarea1">Address</label>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="A.D. Nagar Road, Beltali, Opposite of Ration Shop, Agartala Tripura West PIN-799003" ng-model="form.address"></textarea>
+							</div>
+							<div class="form-group" ng-if="!submitting">
+								<button type="submit" class="btn btn-primary mb-2" ng-click="submit()"
+								 ng-disabled="!form.name || !form.contactNumber || !form.address || !form.email || !form.bloodGroup">Submit</button>
+							</div>
+							<div class="form-group" ng-if="submitting">
+									<p>Saving details....</p>
+							</div>
+							</form>
+			</div>
+			<div ng-if="successfullySubmitted">
+				<h4>Thank you for submitting your details, we will reach you soon.</h4>
+			</div>
+		
 			</div>
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">
@@ -199,12 +209,42 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/stellar.js"></script>
         <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
         <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
         <script src="vendors/isotope/isotope-min.js"></script>
         <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
         <script src="js/jquery.ajaxchimp.min.js"></script>
         <script src="js/mail-script.js"></script>
-        <script src="js/theme.js"></script>
+				<script src="js/theme.js"></script>
+				<script>
+						var app = angular.module('myApp', []);
+						app.controller('myCtrl', function($scope, $http) {
+								$scope.submitting = false;
+								$scope.loaded = true;
+								$scope.successfullySubmitted = false;
+								$scope.form = {};
+
+
+								$scope.submit = function() {
+									$scope.submitting = true;
+									var postData = 
+									{
+									"contactNumber": $scope.form.contactNumber,
+									"name": $scope.form.name,
+									"email": $scope.form.email,
+									"address": $scope.form.address,
+									"bloodGroup": $scope.form.bloodGroup
+								}
+								$http.post('http://localhost:4000/api/bdMembers', postData).then(function(response){
+									$scope.submitting = false;
+									if (response.status) {
+										$scope.successfullySubmitted = true;
+										console.log('submitted successfully');
+									} else {
+										console.log('error is posting');
+									}
+								})
+							}
+						});
+				</script>
     </body>
 </html>
