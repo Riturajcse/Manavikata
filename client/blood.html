@@ -89,45 +89,10 @@
 		<!--================End Home Banner Area =================-->
 		<div class="form-container" style="max-width: 80%; margin-left: 15%; color: black; min-height: 60vh;" ng-app="myApp" ng-controller="myCtrl">
 			<div ng-if="!successfullySubmitted">
-					<h3 style="margin-top: 15vh;">Enter your details below to register for Blood Donations</h3>
-					<form style="color: black" ng-if="loaded">
-							<div class="form-group">
-								<label for="exampleFormControlInput1">Name</label>
-								<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rahul Banerjee" ng-model="form.name">
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlInput1">Contact no.</label>
-								<input type="text" class="form-control" id="exampleFormControlInput2" placeholder="+9198789876543" ng-model="form.contactNumber">
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlInput1">Email address</label>
-								<input type="text" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com" ng-model="form.email">
-							</div>
-							<div class="form-group">
-								<label style="margin-left: 5px;margin-top: 10px;">Blood Group</label>
-								<select ng-model="form.bloodGroup">
-									<option value="A+">A(+)</option>
-									<option value="A-">A(-)</option>
-									<option value="B+">B(+)</option>
-									<option value="B-">B(-)</option>
-									<option value="AB+">AB(+)</option>
-									<option value="AB-">AB(-)</option>
-									<option value="O+">O(+)</option>
-									<option value="O-">O(-)</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlTextarea1">Address</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="A.D. Nagar Road, Beltali, Opposite of Ration Shop, Agartala Tripura West PIN-799003" ng-model="form.address"></textarea>
-							</div>
-							<div class="form-group" ng-if="!submitting">
-								<button type="submit" class="btn btn-primary mb-2" ng-click="submit()"
-								 ng-disabled="!form.name || !form.contactNumber || !form.address || !form.email || !form.bloodGroup">Submit</button>
-							</div>
-							<div class="form-group" ng-if="submitting">
-									<p>Saving details....</p>
-							</div>
-							</form>
+					<h3 style="margin-top: 15vh;">Click on the Link below to register for Blood Donations</h3>
+					
+                              <ahre f https://forms.gle/uuQcmAXnPi5mbRrc8>
+
 			</div>
 			<div ng-if="successfullySubmitted">
 				<h4>Thank you for submitting your details, we will reach you soon.</h4>
