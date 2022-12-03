@@ -7,19 +7,19 @@ const apiUrl = '/api';
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const express = require('express');
-var mongoose = require('mongoose');
-var routes = require('./server/routes/routes.js');
-var db = require('./server/config/db');
+// var mongoose = require('mongoose');
+// var routes = require('./server/routes/routes.js');
+// var db = require('./server/config/db');
 
-//db connection
-//mongoose.connect(db.mongo.uri, {}); 
+// //db connection
+// //mongoose.connect(db.mongo.uri, {}); 
 
-mongoose.connect(db.mongo.uri, {}, function(err) {
-    if (err) {throw err;}
-    else {
-      console.log('Db Connection successful!');
-    }
-});
+// mongoose.connect(db.mongo.uri, {}, function(err) {
+//     if (err) {throw err;}
+//     else {
+//       console.log('Db Connection successful!');
+//     }
+// });
 
 var app = express();
 
@@ -28,7 +28,7 @@ app
     .use(bodyParser.json())
     // Static content
     .use(express.static(html))
-    .use('/api', routes)
+    //.use('/api', routes)
     // Start server
     .listen(port, function () {
         console.log('Server running on port: ' + port);
